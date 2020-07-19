@@ -14,9 +14,15 @@ class Particle {
         push();
         translate(pos.x, pos.y);
         rotate(angle);
-        if (this.body.position.x<330){
+        if (this.body.position.x<300 && this.body.position.y===450){
            score=score+500;
           }
+        if (this.body.position.x>300 && this.body.position.x<600 && this.body.position.y===450){
+            score=score+100;
+           }
+        if (this.body.position.x>600 && this.body.position.y===450){
+            score=score+200;
+           }
         noStroke();
         fill(this.color)
         ellipseMode(RADIUS);
