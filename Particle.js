@@ -7,7 +7,6 @@ class Particle {
         this.body = Bodies.circle(x, y, this.r,options);       
         this.color=color(random(0, 255), random(0, 255), random(0, 255));
         World.add(world, this.body);
-
     }
     display() {
         var pos = this.body.position;
@@ -15,16 +14,13 @@ class Particle {
         push();
         translate(pos.x, pos.y);
         rotate(angle);
-        //imageMode(CENTER);
+        if (this.body.position.x<330){
+           score=score+500;
+          }
         noStroke();
         fill(this.color)
         ellipseMode(RADIUS);
         ellipse(0, 0, this.r,this.r);
         pop();
     }
-    score(){
-        if (this.Visiblity < 0 && this.Visiblity > -1005){
-          score++;
-        }
-      }
 };
